@@ -15,11 +15,6 @@ public class Controller {
     @Autowired
     User user;
 
-    @GetMapping("/hello")
-    public String hello(@RequestParam("userId") String userId){
-        return "Hello World "+userId;
-    }
-
     @PostMapping(value = "/createUser")
     public ResponseEntity createUser(@RequestBody User user) {
         appService.saveOrUpdateUserInfo(user);
